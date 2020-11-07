@@ -1,4 +1,4 @@
-@font-face {
+font-face {
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 300;
@@ -15,33 +15,17 @@
 body {
     font-size: 100%;
     font-family: 'Source Sans Pro', helvetica, sans-serif;
-    color: #333333;
+    color: #333;
     line-height: 1.6;
     font-weight: normal;
-    background-color: #0d1529;
+    background: #0c1428;
 }
-
-.container {
-    position: relative;
-    transition: all 0.5s ease;
-}
-
-.toggled .container {
-    filter: blur(8px);
-    transition: all 0.5s ease;
-}
-
-
-/* HEADER */
 
 header {
     position: absolute;
     top: 0;
     z-index: 15;
 }
-
-
-/* TARGET BURGET */
 
 .target-burger {
     margin: 1.125em;
@@ -57,14 +41,6 @@ header {
     opacity: 0.45;
 }
 
-.toggled .target-burger ul.buns li.bun {
-    transform: rotate(45deg) translateZ(0);
-}
-
-.toggled .target-burger ul.buns li.bun:last-child {
-    transform: rotate(-45deg) translateZ(0);
-}
-
 .target-burger ul.buns {
     width: 1.625em;
     height: 1.625em;
@@ -74,9 +50,7 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transition: -webkit-transform 1s cubic-bezier(0.23, 1, 0.32, 1), color 1s cubic-bezier(0.23, 1, 0.32, 1);
     transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1), color 1s cubic-bezier(0.23, 1, 0.32, 1);
-    -webkit-transform: translateZ(0);
     transform: translateZ(0);
     color: #fff;
 }
@@ -93,12 +67,19 @@ header {
 }
 
 .target-burger ul.buns li.bun:last-child {
-    -webkit-transform: translateY(3.75px) translateZ(0);
     transform: translateY(3.75px) translateZ(0);
 }
 
+.toggled .target-burger ul.buns li.bun {
+    transform: rotate(45deg) translateZ(0);
+}
 
-/* MAIN NAVIGATION */
+.toggled .target-burger ul.buns li.bun:last-child {
+    transform: rotate(-45deg) translateZ(0);
+}
+
+
+/* MENU */
 
 nav.main-nav {
     position: absolute;
@@ -111,6 +92,7 @@ nav.main-nav {
     opacity: 0;
     transform: scale(0.85);
     transition: all 0.5s ease;
+    box-sizing: border-box;
 }
 
 .toggled nav.main-nav {
@@ -154,8 +136,18 @@ nav.main-nav ul li a:hover {
 /* CONTENT */
 
 .app-content {
-    height: 100vh;
     width: 100%;
+    min-height: 100vh;
     background: url("https://i.pinimg.com/originals/ce/96/4b/ce964beb92824970e5e92d4bc027b1d9.jpg") center center no-repeat;
     background-size: cover;
+}
+
+.container {
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.toggled .container {
+    filter: blur(8px);
+    transition: all 0.5s ease;
 }
